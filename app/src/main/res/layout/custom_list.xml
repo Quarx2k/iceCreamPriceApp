@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="530dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/name"
+        android:textColor="#ff0000ff"
+        android:textSize="24sp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/price"
+        android:layout_marginStart="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/name"
+        android:textColor="#ff8000c0"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/summ"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="19dp"
+        android:textColor="#ff0000ff"
+        android:textSize="24sp"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/stock"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="27dp"
+        android:textSize="24sp"
+        android:textColor="#ff0000ff"
+        android:hint="Кол-во"
+        android:singleLine="true"
+        android:textColorHint="#ffff001f"
+        android:layout_toStartOf="@+id/summ" />
+
+</RelativeLayout>
