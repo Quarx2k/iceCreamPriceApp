@@ -55,12 +55,13 @@ public class IceCreamAdapter extends ArrayAdapter<IceCream> {
                 String newPrice = viewHolder.price.getText().toString();
                 iceCream.setStock(stockText);
                 if (newPrice.length() > 0 && stockText.length() > 0) {
-                    String summ = String.valueOf(Double.parseDouble(stockText) * Double.parseDouble(newPrice));
+                    String summ = String.valueOf(Integer.parseInt(stockText) * Double.parseDouble(newPrice));
                     iceCream.setSumm(summ);
                     viewHolder.summ.setText(summ + " руб.");
                     MainActivity.updateFinalValue();
                 } else {
                     viewHolder.summ.setText("0.00");
+                    MainActivity.updateFinalValue();
                 }
             }
         });

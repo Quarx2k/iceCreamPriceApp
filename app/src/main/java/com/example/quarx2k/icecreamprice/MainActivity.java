@@ -91,7 +91,6 @@ public class MainActivity extends ActionBarActivity {
             IceCreamAdapter iceCreamAdapter = new IceCreamAdapter(getApplicationContext(), iceCreamList);
             listView.setAdapter(iceCreamAdapter);
             iceCreamAdapter.notifyDataSetChanged();
-            hiddeKeyboard(this, getCurrentFocus());
         }
     }
 
