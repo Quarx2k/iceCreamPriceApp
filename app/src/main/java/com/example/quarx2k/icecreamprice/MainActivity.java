@@ -74,6 +74,14 @@ public class MainActivity extends ActionBarActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        IceCream iceCream = new IceCream();
+        iceCream.setPrice("1");
+        iceCream.setName("Брак");
+        iceCreamList.add(iceCream);
+        iceCream = new IceCream();
+        iceCream.setPrice("1");
+        iceCream.setName("Вода");
+        iceCreamList.add(iceCream);
         listView.setAdapter(iceCreamAdapter);
     }
 
