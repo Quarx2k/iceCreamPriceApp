@@ -8,6 +8,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,8 +20,10 @@ import java.util.ArrayList;
  * Created by quarx2k on 05.05.15.
  */
 public class IceCreamAdapter extends ArrayAdapter<IceCream> {
+    private Context context;
     public IceCreamAdapter(Context context, ArrayList<IceCream> ice) {
         super(context, 0, ice);
+        this.context = context;
     }
 
     @Override
@@ -33,7 +37,7 @@ public class IceCreamAdapter extends ArrayAdapter<IceCream> {
             viewHolder.price = (TextView) convertView.findViewById(R.id.price);
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
             viewHolder.summ = (TextView) convertView.findViewById(R.id.summ);
-            viewHolder.stock = (EditText) convertView.findViewById(R.id.stock);
+            viewHolder.stock = (EditTextBackEvent) convertView.findViewById(R.id.stock);
             convertView.setTag(viewHolder);
 
         } else {
@@ -65,12 +69,26 @@ public class IceCreamAdapter extends ArrayAdapter<IceCream> {
                 }
             }
         });
+
+
+        viewHolder.stock.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    viewHolder.stock.clearFocus();
+                    InputMethodManager keyboard = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    keyboard.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+                return false;
+            }
+        });
+
         return convertView;
     }
     private class ViewHolder {
         TextView name;
         TextView price;
         TextView summ;
-        EditText stock;
+        EditTextBackEvent stock;
     }
 }
