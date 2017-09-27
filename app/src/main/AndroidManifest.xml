@@ -2,12 +2,13 @@
     package="com.example.quarx2k.icecreamprice">
 
     <application
-        android:allowBackup="true"
         android:label="@string/app_name"
+        android:name=".App"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/AppTheme">
     <activity
         android:name=".MainActivity"
+        android:theme="@style/AppTheme"
         android:screenOrientation="landscape"
         android:windowSoftInputMode="adjustPan"
         android:label="@string/app_name" >
